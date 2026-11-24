@@ -6,6 +6,8 @@ from telegram.ext import (Application, CallbackQueryHandler, CommandHandler,
                           ContextTypes, MessageHandler, filters)
 
 logging.basicConfig(level=logging.INFO)
+for _n in ("httpx", "httpcore"):
+    logging.getLogger(_n).setLevel(logging.WARNING)
 TOKEN = os.environ["BOT_TOKEN"]
 PAGE = 8
 client = Ephoto360()
